@@ -11,6 +11,11 @@ class Model {
     getToDos() {
         return this.todos
     }
+
+    // create to do
+    createNewToDo() {
+        this.dataProvider.createData();
+    }
 }
 
 export default Model;

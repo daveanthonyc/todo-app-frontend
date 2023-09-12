@@ -4,8 +4,8 @@ class ToDoProvider {
     }
 
     // get all data
-    async fetchData(endpoint) {
-        const res = await fetch(`${this.baseURL}${endpoint}`)
+    async fetchData() {
+        const res = await fetch(`${this.baseURL}`)
         if (!res) {
             throw new Error('unable to fetch from URL')
         }
@@ -15,8 +15,8 @@ class ToDoProvider {
     }
 
     // get data by id
-    async fetchDataById(endpoint, id) {
-        const res = await fetch(`${this.baseURL}${endpoint}/${id}`)
+    async fetchDataById(id) {
+        const res = await fetch(`${this.baseURL}${id}`)
         if (!res) {
             throw new Error('unable to fetch from URL')
         }
@@ -26,7 +26,7 @@ class ToDoProvider {
     }
 
     // create new data
-    async createData(endpoint, newBody) {
+    async createData(newBody) {
         const newData = {body: newBody}
         const requestOptions = {
             method: 'POST',
@@ -36,13 +36,13 @@ class ToDoProvider {
             body: JSON.stringify(newData)
         }
 
-        const res = await fetch(`${this.baseURL}${endpoint}`, requestOptions)
+        const res = await fetch(`${this.baseURL}`, requestOptions)
         const parse = await res.json()
         return parse
     }
 
     // update data by id
-    async updateDataById(endpoint, id, updatedEntry) {
+    async updateDataById(id, updatedEntry) {
         const requestOptions = {
             method: 'PUT',
             headers: {
@@ -50,7 +50,7 @@ class ToDoProvider {
             },
             body: JSON.stringify(updatedEntry)
         }
-        const res = await fetch(`${this.baseURL}${endpoint}${id}`, requestOptions)
+        const res = await fetch(`${this.baseURL}${id}`, requestOptions)
         if (!res) {
             throw new Error('unable to update by id')
         }
@@ -58,9 +58,9 @@ class ToDoProvider {
     }
 
     // delete data by id
-    async deleteDataById(endpoint, id) {
+    async deleteDataById(id) {
         const requestOptions = { method: 'DELETE' }
-        const res = await fetch(`${this.baseURL}${endpoint}${id}`, requestOptions)
+        const res = await fetch(`${this.baseURL}${id}`, requestOptions)
         if (!res) {
             throw new Error('failed to delete entry')
         }
