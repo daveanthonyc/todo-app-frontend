@@ -1,16 +1,16 @@
-class ToDoProvider {
-    constructor(baseAPIURL) {
-        this.baseAPIURL = baseAPIURL
+class Model {
+    todos
+    constructor(dataProvider) {
+        this.dataProvider = dataProvider
     }
 
-    async fetchData(endPoint) {
-        try {
-            const res = await fetch(`${this.baseAPIURL}/${endPoint}`)
-            if (!res) {
-                throw new Error('Failed to fetch Data from endpoint')
-            }
-        } catch (error) {
-            throw new Error('Server error')
-        }
+    async initialiseData(endpoint) {
+        this.todos = await this.dataProvider.fetchData(endpoint)
+    }
+
+    getToDos() {
+        return this.todos
     }
 }
+
+export default Model;

@@ -1,6 +1,6 @@
 class Presenter {
-    constructor(toDoProvider) {
-        this.toDoProvider = toDoProvider;
+    constructor(model) {
+        this.model = model;
     }
 
 
