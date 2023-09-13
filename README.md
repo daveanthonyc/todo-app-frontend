@@ -1,8 +1,16 @@
-# React + Vite
+# To Do List React App
+This is the front-end of the To-do list MERN stack application. It contains light and dark mode, regular to-do list functionality and filtering capabillity.
+The design is taken from the Frontend Mentor projects found here (https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW/hub)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Installation
+Use the Node Package Manager (npm) to install
 
-Currently, two official plugins are available:
+```bash
+npm install
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+## Project status
+Development is finished

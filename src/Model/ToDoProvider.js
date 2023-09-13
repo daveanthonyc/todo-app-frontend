@@ -3,18 +3,15 @@ class ToDoProvider {
         this.baseURL = baseURL;
     }
 
-    // get all data
     async fetchData() {
         const res = await fetch(`${this.baseURL}`)
         if (!res) {
             throw new Error('unable to fetch from URL')
         }
-
         const data = await res.json();
         return data
     }
 
-    // create new data and return the new entry
     async createData(newBody) {
         const newData = {body: newBody}
         const requestOptions = {
@@ -26,11 +23,9 @@ class ToDoProvider {
         }
 
         const res = await fetch(`${this.baseURL}`, requestOptions)
-        const parse = await res.json()
-        return parse
+        return await res.json()
     }
 
-    // update data by id
     async updateDataById(id, updatedEntry) {
         const requestOptions = {
             method: 'PUT',
@@ -39,20 +34,24 @@ class ToDoProvider {
             },
             body: JSON.stringify(updatedEntry)
         }
+
         const res = await fetch(`${this.baseURL}/${id}`, requestOptions)
+
         if (!res) {
             throw new Error('unable to update by id')
         }
+        
         return await res.json();
     }
 
-    // delete data by id
     async deleteDataById(id) {
         const requestOptions = { method: 'DELETE' }
         const res = await fetch(`${this.baseURL}/${id}`, requestOptions)
+
         if (!res) {
             throw new Error('failed to delete entry')
         }
+
         const data = res.json()
         return data
     }

@@ -1,7 +1,6 @@
 :root {
   --clr-Bright-Blue: hsl(220, 98%, 61%);
-  /* --clr-Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%) */
-  
+
   --clr-Very-Light-Gray: hsl(0, 0%, 98%);
   --clr-Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
   --clr-Light-Grayish-Blue: hsl(233, 11%, 84%);
@@ -11,7 +10,6 @@
   --clr-Very-Dark-Blue: hsl(235, 21%, 11%);
   --clr-Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
   --clr-Light-Grayish-Blue: hsl(234, 39%, 85%);
-  /* --clr-Light-Grayish-Blue (hover): hsl(236, 33%, 92%); */
   --clr-Dark-Grayish-Blue: hsl(234, 11%, 52%);
   --clr-Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
   --clr-Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
@@ -137,7 +135,6 @@ body {
   padding-block: 1rem;
   border-radius: 6px;
   margin-bottom: 1rem;  
-  /* box-shadow: 0px 5px 4px rgba(0,0,0,0.3); */
 }
 
 .todo-entry[data-theme="false"] {
@@ -152,7 +149,6 @@ body {
   padding-block: 1rem;
   border-radius: 6px;
   margin-bottom: 1rem;  
-  /* box-shadow: 0px 5px 4px rgba(0,0,0,0.3); */
 }
 
 .todo-entry input {
@@ -192,7 +188,6 @@ body {
   width: 20px;
   aspect-ratio: 1;
   border-radius: 100vmax;
-  /* border: 1px solid var(--clr-Very-Dark-Grayish-Blue); */
   border: none;
   outline: none;
   background: linear-gradient(45deg,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
@@ -349,6 +344,7 @@ button.active {
   background-repeat: no-repeat;
 }
 
+
 @media (min-width: 40em) {
   .background-main {
     background-image: url("./images/bg-desktop-dark.jpg");
@@ -382,6 +378,4 @@ button.active {
   .filters button {
     font-size: 0.8rem;
   }
-  
-  
 }
