@@ -8,7 +8,7 @@ import Model from './Model/Model'
 export const Context = React.createContext()
 
 function App() {
-  const API_URL = 'http://localhost:3000/v1/todos'
+  const API_URL = 'https://todo-server-9ydv.onrender.com/api/v1/todos'
 
   // provides all fetch methods to interact with server -> passed as dependency to presenter
   const provider = new ToDoProvider(API_URL)
