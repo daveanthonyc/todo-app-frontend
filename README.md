@@ -9,6 +9,11 @@ Use the Node Package Manager (npm) to install
 npm install
 ```
 
+You can run the project in dev mode
+```bash
+npm run dev
+```
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
