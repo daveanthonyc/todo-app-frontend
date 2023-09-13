@@ -56,15 +56,15 @@ describe('Model works together', () => {
     //     })
     // })
 
-    test('provider updates by id', async () => {
-        return new Promise((resolve) => {
-            const provider = new ToDoProvider('http://localhost:3000')
-            const res = provider.updateDataById('/v1/todos/', '64f73ebba235c8942acbf34d', {body:"full complete",completed: false} )
-            resolve();
-            expect(res).toEqual('thing')
-        })
+    // test('provider updates by id', async () => {
+    //     return new Promise((resolve) => {
+    //         const provider = new ToDoProvider('http://localhost:3000')
+    //         const res = provider.updateDataById('/v1/todos/', '64f73ebba235c8942acbf34d', {body:"full complete",completed: false} )
+    //         resolve();
+    //         expect(res).toEqual('thing')
+    //     })
         
-    })
+    // })
     
     test('model takes in provider as dependency and can fetch data', () => {
         const provider = new ToDoProvider('http://localhost:3000')

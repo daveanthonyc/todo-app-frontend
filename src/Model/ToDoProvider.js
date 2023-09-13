@@ -14,18 +14,7 @@ class ToDoProvider {
         return data
     }
 
-    // get data by id
-    async fetchDataById(id) {
-        const res = await fetch(`${this.baseURL}${id}`)
-        if (!res) {
-            throw new Error('unable to fetch from URL')
-        }
-
-        const data = await res.json();
-        return data
-    }
-
-    // create new data
+    // create new data and return the new entry
     async createData(newBody) {
         const newData = {body: newBody}
         const requestOptions = {
@@ -50,17 +39,17 @@ class ToDoProvider {
             },
             body: JSON.stringify(updatedEntry)
         }
-        const res = await fetch(`${this.baseURL}${id}`, requestOptions)
+        const res = await fetch(`${this.baseURL}/${id}`, requestOptions)
         if (!res) {
             throw new Error('unable to update by id')
         }
-        return data = await res.json();
+        return await res.json();
     }
 
     // delete data by id
     async deleteDataById(id) {
         const requestOptions = { method: 'DELETE' }
-        const res = await fetch(`${this.baseURL}${id}`, requestOptions)
+        const res = await fetch(`${this.baseURL}/${id}`, requestOptions)
         if (!res) {
             throw new Error('failed to delete entry')
         }

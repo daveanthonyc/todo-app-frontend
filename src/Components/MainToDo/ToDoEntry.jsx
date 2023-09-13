@@ -8,6 +8,7 @@ function ToDoEntry(createNewEntry) {
     function createNewToDo(e) {
         e.preventDefault();
         e.target.reset();
+        
         // create new to do
         createNewEntry.createNewEntry(formText)
         // reset 
