@@ -1,3 +1,6 @@
+// passed as a prop to the MainToDo.jsx view
+// methods use provider methods and edit the model
+
 class Presenter {
     constructor(model, provider) {
         this.model = model
